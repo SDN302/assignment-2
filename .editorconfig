@@ -1,4 +1,4 @@
-[*.{ts,json,prettierrc,ejs}]
+[*.{ts,json,prettierrc,ejs,hbs,js,css}]
 indent_style = tab
 indent_size = 2
 
