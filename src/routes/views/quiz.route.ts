@@ -1,9 +1,11 @@
 import express from 'express';
 
-import { allQuizzes } from '../../controllers/views/quiz.controller';
+import { allQuizzes, newQuiz } from '../../controllers/views/quiz.controller';
 
 const router = express.Router();
 
 router.get('/', allQuizzes);
+
+router.get('/new', newQuiz);
 
 export default router;

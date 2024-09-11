@@ -12,3 +12,7 @@ export const allQuestions = async (req: Request, res: Response) => {
 
 	res.render('questions/allQuestions', { questions: questions });
 };
+
+export const newQuestion = async (req: Request, res: Response) => {
+	res.render('questions/newQuestion');
+};
