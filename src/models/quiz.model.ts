@@ -1,6 +1,12 @@
 import mongoose, { Schema } from 'mongoose';
 import { Question } from './question.model';
 
+export interface IQuiz {
+	title: string;
+	description: string;
+	questions: string[];
+}
+
 const QuizSchema = new mongoose.Schema({
 	title: { type: Schema.Types.String, required: true },
 	description: { type: Schema.Types.String, required: true },

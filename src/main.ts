@@ -5,6 +5,7 @@ import connectDb from './config/db';
 import questionApi from './routes/api/question.route';
 import quizApi from './routes/api/quiz.route';
 import question from './routes/views/question.route';
+import quiz from './routes/views/quiz.route';
 import morgan from 'morgan';
 import { setupSwagger } from './swagger/swagger';
 
@@ -32,6 +33,7 @@ app.use('/api/quizzes', quizApi);
 
 // Routes Views
 app.use('/questions', question);
+app.use('/quizzes', quiz);
 
 // View Engine
 app.set('view engine', 'ejs');
