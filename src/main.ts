@@ -5,7 +5,7 @@ import connectDb from './config/db';
 import question from './routes/question.route';
 import quiz from './routes/quiz.route';
 import morgan from 'morgan';
-import { open } from 'openurl';
+//import { open } from 'openurl';
 import { setupSwagger } from './swagger/swagger';
 
 // CORS Middleware
@@ -30,6 +30,10 @@ app.use(morgan('dev'));
 app.use('/questions', question);
 app.use('/quizzes', quiz);
 
+// View Engine
+app.set('view engine', 'ejs');
+app.set('views', './src/views');
+
 // Swagger
 setupSwagger(app);
 
@@ -45,6 +49,6 @@ app.listen(server.port, async () => {
 		);
 
 		// Open API documents
-		open(`http://${server.host}:${server.port}/api-docs`);
+		// open(`http://${server.host}:${server.port}/api-docs`);
 	}
 });
