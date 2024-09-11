@@ -38,3 +38,15 @@ export const displayQuiz = async (req: Request, res: Response) => {
 
 	res.render('quizzes/displayQuiz', { quiz: quiz, questions: questions });
 };
+
+export const editQuiz = async (req: Request, res: Response) => {
+	const { id } = req.query;
+
+	const response = await axios.get<IQuiz>(
+		`${server.schema}://${server.host}:${server.port}/api/quizzes/${id}`,
+	);
+
+	const quiz = response.data;
+
+	res.render('quizzes/editQuiz', { quiz: quiz });
+};
