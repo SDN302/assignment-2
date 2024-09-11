@@ -1,5 +1,12 @@
 import mongoose, { Schema } from 'mongoose';
 
+export interface IQuestion {
+	text: string;
+	options: string[];
+	keywords: string[];
+	correctAnswerIndex: number;
+}
+
 const QuestionSchema = new mongoose.Schema({
 	text: { type: Schema.Types.String, required: true },
 	options: { type: [Schema.Types.String], required: true },

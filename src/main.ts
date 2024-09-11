@@ -2,8 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import { DEVELOPMENT, server } from './config/config';
 import connectDb from './config/db';
-import question from './routes/api/question.route';
-import quiz from './routes/api/quiz.route';
+import questionApi from './routes/api/question.route';
+import quizApi from './routes/api/quiz.route';
+import question from './routes/views/question.route';
 import morgan from 'morgan';
 import { setupSwagger } from './swagger/swagger';
 
@@ -26,8 +27,11 @@ app.use(express.json());
 app.use(morgan('dev'));
 
 // Routes API
-app.use('/api/questions', question);
-app.use('/api/quizzes', quiz);
+app.use('/api/questions', questionApi);
+app.use('/api/quizzes', quizApi);
+
+// Routes Views
+app.use('/questions', question);
 
 // View Engine
 app.set('view engine', 'ejs');
