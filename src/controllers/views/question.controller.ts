@@ -16,3 +16,15 @@ export const allQuestions = async (req: Request, res: Response) => {
 export const newQuestion = async (req: Request, res: Response) => {
 	res.render('questions/newQuestion');
 };
+
+export const displayQuestion = async (req: Request, res: Response) => {
+	const { id } = req.query;
+
+	const response = await axios.get<IQuestion>(
+		`${server.schema}://${server.host}:${server.port}/api/questions/${id}`,
+	);
+
+	const question = response.data;
+
+	res.render('questions/displayQuestion', { question: question });
+};

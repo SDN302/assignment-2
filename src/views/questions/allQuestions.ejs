@@ -21,7 +21,9 @@
 					class="list-group-item d-flex justify-content-between align-items-start"
 				>
 					<div class="ms-2 me-auto">
-						<a href="/questions/<%= question._id %>"> <%= question.text %> </a>
+						<a href="/questions/display?id=<%= question._id %>">
+							<%= question.text %>
+						</a>
 					</div>
 					<button type="button" class="btn btn-danger">Delete</button>
 				</div>
