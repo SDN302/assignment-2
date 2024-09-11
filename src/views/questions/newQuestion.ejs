@@ -67,11 +67,11 @@
 				const options = document
 					.querySelector('#optionsForm')
 					.value.split(',')
-					.trim();
+					.map((option) => option.trim());
 				const keywords = document
 					.querySelector('#keywordsForm')
 					.value.split(',')
-					.trim();
+					.map((keyword) => keyword.trim());
 				const correctAnswerIndex = document.querySelector(
 					'#correctAnswerIndexForm',
 				).value;
