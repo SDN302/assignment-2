@@ -8,7 +8,7 @@ import {
 	getCapitalQuestions,
 	getQuizById,
 	updateQuiz,
-} from '../controllers/quiz.controller';
+} from '../../controllers/api/quiz.controller';
 
 const router = express.Router();
 
@@ -82,7 +82,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /quizzes:
+ * /api/quizzes:
  *   get:
  *     summary: Get all quizzes
  *     description: Retrieve a list of all quizzes
@@ -111,7 +111,7 @@ router.get('/', getAllQuizzes);
 
 /**
  * @swagger
- * /quizzes/{quizId}:
+ * /api/quizzes/{quizId}:
  *   get:
  *     summary: Get a quiz by ID
  *     description: Retrieve a quiz by ID
@@ -154,7 +154,7 @@ router.get('/:quizId', getQuizById);
 
 /**
  * @swagger
- * /quizzes:
+ * /api/quizzes:
  *   post:
  *     summary: Create a new quiz
  *     description: Create a new quiz
@@ -188,7 +188,7 @@ router.post('/', createQuiz);
 
 /**
  * @swagger
- * /quizzes/{quizId}:
+ * /api/quizzes/{quizId}:
  *   put:
  *     summary: Update a quiz by ID
  *     description: Update a quiz by ID
@@ -238,7 +238,7 @@ router.put('/:quizId', updateQuiz);
 
 /**
  * @swagger
- * /quizzes/{quizId}:
+ * /api/quizzes/{quizId}:
  *   delete:
  *     summary: Delete a quiz by ID
  *     description: Delete a quiz by ID
@@ -277,7 +277,7 @@ router.delete('/:quizId', deleteQuiz);
 
 /**
  * @swagger
- * /quizzes/{quizId}/populate:
+ * /api/quizzes/{quizId}/populate:
  *   get:
  *     summary: Populate a quiz with capital questions
  *     description: Populate a quiz with capital questions
@@ -320,7 +320,7 @@ router.get('/:quizId/populate', getCapitalQuestions);
 
 /**
  * @swagger
- * /quizzes/{quizId}/question:
+ * /api/quizzes/{quizId}/question:
  *   post:
  *     summary: Create a new question for a quiz
  *     description: Create a new question for a quiz
@@ -370,7 +370,7 @@ router.post('/:quizId/question', createOneQuestionForQuiz);
 
 /**
  * @swagger
- * /quizzes/{quizId}/questions:
+ * /api/quizzes/{quizId}/questions:
  *   post:
  *     summary: Create many questions for a quiz
  *     description: Create many questions for a quiz

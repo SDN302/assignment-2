@@ -2,10 +2,9 @@ import express from 'express';
 import cors from 'cors';
 import { DEVELOPMENT, server } from './config/config';
 import connectDb from './config/db';
-import question from './routes/question.route';
-import quiz from './routes/quiz.route';
+import question from './routes/api/question.route';
+import quiz from './routes/api/quiz.route';
 import morgan from 'morgan';
-//import { open } from 'openurl';
 import { setupSwagger } from './swagger/swagger';
 
 // CORS Middleware
@@ -26,9 +25,9 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(morgan('dev'));
 
-// Routes
-app.use('/questions', question);
-app.use('/quizzes', quiz);
+// Routes API
+app.use('/api/questions', question);
+app.use('/api/quizzes', quiz);
 
 // View Engine
 app.set('view engine', 'ejs');
@@ -47,8 +46,5 @@ app.listen(server.port, async () => {
 		console.info(
 			`Swagger UI available at http://${server.host}:${server.port}/api-docs`,
 		);
-
-		// Open API documents
-		// open(`http://${server.host}:${server.port}/api-docs`);
 	}
 });

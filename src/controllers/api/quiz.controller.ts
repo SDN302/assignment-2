@@ -1,5 +1,5 @@
-import { Question } from '../models/question.model';
-import { Quiz } from '../models/quiz.model';
+import { Question } from '../../models/question.model';
+import { Quiz } from '../../models/quiz.model';
 import { Request, Response } from 'express';
 
 export const getAllQuizzes = async (req: Request, res: Response) => {

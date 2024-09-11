@@ -15,7 +15,7 @@ const swaggerOptions = {
 		},
 		schemes: ['http', 'https'],
 	},
-	apis: ['src/routes/*.ts'],
+	apis: ['src/routes/api/*.ts'],
 };
 
 //------------------------------------------------------------

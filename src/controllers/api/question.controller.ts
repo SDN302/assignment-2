@@ -1,4 +1,4 @@
-import { Question } from '../models/question.model';
+import { Question } from '../../models/question.model';
 import { Request, Response } from 'express';
 
 export const getAllQuestions = async (req: Request, res: Response) => {

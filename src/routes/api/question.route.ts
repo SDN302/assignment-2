@@ -5,7 +5,7 @@ import {
 	getAllQuestions,
 	getQuestionById,
 	updateQuestion,
-} from '../controllers/question.controller';
+} from '../../controllers/api/question.controller';
 
 const router = express.Router();
 
@@ -73,7 +73,7 @@ const router = express.Router();
 
 /**
  * @swagger
- * /questions:
+ * /api/questions:
  *   get:
  *     summary: Get all questions
  *     description: Get all questions
@@ -102,7 +102,7 @@ router.get('/', getAllQuestions);
 
 /**
  * @swagger
- * /questions/{questionId}:
+ * /api/questions/{questionId}:
  *   get:
  *     summary: Get a question by ID
  *     description: Get a question by ID
@@ -145,7 +145,7 @@ router.get('/:questionId', getQuestionById);
 
 /**
  * @swagger
- * /questions:
+ * /api/questions:
  *   post:
  *     summary: Create a question
  *     description: Create a question
@@ -179,7 +179,7 @@ router.post('/', createQuestion);
 
 /**
  * @swagger
- * /questions/{questionId}:
+ * /api/questions/{questionId}:
  *   put:
  *     summary: Update a question
  *     description: Update a question
@@ -229,7 +229,7 @@ router.put('/:questionId', updateQuestion);
 
 /**
  * @swagger
- * /questions/{questionId}:
+ * /api/questions/{questionId}:
  *   delete:
  *     summary: Delete a question
  *     description: Delete a question
